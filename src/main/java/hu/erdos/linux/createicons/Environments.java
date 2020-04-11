@@ -7,8 +7,9 @@ public class Environments {
 
 	public static String USERHOME = System.getProperty("user.home");
 	public static String ICONSHOME = USERHOME+File.separator+".local"+File.separator+"share"+File.separator+"applications";
-	public static String VERNUM = "CreateIcon v0.1.1 beta\n(c) 2020, erdos\n";
-	
+	public static String VERNUM = "CreateIcon v0.1.3 \n(c) 2020, erdos\n";
+	public static boolean root = false;
+
 	public static ArrayList<String> CATEG() {
 		ArrayList<String> cat = new ArrayList<String>();
 		

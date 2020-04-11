@@ -12,7 +12,7 @@ public class App
     {
     	String executive = null;
     	String icon = null;
-    	
+    	Environments.root = isAdmin();
         if (args.length > 0) {
         	for (int i=0; i < args.length; i++) {
         		switch (args[i]) {
@@ -28,6 +28,9 @@ public class App
 					Help();
 					System.exit(0);
 					break;
+				case "--edit": new EditIcon();
+					break;
+
 				default:
 					break;
 				}
@@ -52,5 +55,15 @@ public class App
 		hlp.append("\t-i <icon (with absolute path)>\n");
 		
 		System.out.println(hlp.toString());
+	}
+
+	private static boolean isAdmin() {
+    	String usr = System.getProperty("user.name");
+    	if (usr.toLowerCase().equals("root")) {
+    		Environments.ICONSHOME = "/usr/share/applications";
+    		return true;
+		} else {
+    		return false;
+		}
 	}
 }
