@@ -2,7 +2,7 @@
 `(c)2020 erdos`
 >command line tool for creating desktop icons
 
-##Usage
+## Usage
 
 cricon (optiions)
 
