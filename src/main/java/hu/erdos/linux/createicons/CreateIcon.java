@@ -15,12 +15,24 @@ public class CreateIcon {
 	public CreateIcon(String exec, String icon) {
 		System.out.println("Executive: "+exec);
 		System.out.println("Icon: "+icon);
+		String stdin = new String();
 		desktopIcon.setExec(exec);
 		desktopIcon.setIcon(icon);
 		System.out.print("Name: ");
-		desktopIcon.setName(scn.nextLine());
+		stdin = scn.nextLine();
+		if (!stdin.isEmpty()) {
+			desktopIcon.setName(stdin);	
+		} else {
+			System.out.println("The name can not be null!");
+			System.exit(2);
+		}		
+		stdin = new String();
 		System.out.print("Generic Name: ");
-		desktopIcon.setGeneric_name(scn.nextLine());
+		stdin = scn.nextLine();
+		if (stdin.isEmpty() ) {
+			stdin = " ";
+		}
+		desktopIcon.setGeneric_name(stdin);		
 		System.out.print("Terminal: (true or false - default: false):  ");
 		String term = scn.nextLine();
 		if (term.isEmpty()) {
@@ -52,6 +64,10 @@ public class CreateIcon {
 
 	private void writeDesktop() throws IOException {
 		String fileName = Environments.ICONSHOME+File.separator+desktopIcon.getName().replaceAll(" ", "")+".desktop";
+		File ihome = new File( Environments.ICONSHOME);
+		if (!ihome.exists()) {
+			ihome.mkdirs();
+		}
 		PrintWriter pw = new PrintWriter(new FileWriter(new File(fileName),true),true);
 		pw.append("[Desktop Entry]"+"\n");
 		pw.append("Name="+desktopIcon.getName()+"\n");
@@ -72,15 +88,32 @@ public class CreateIcon {
 	
 	private int categorySelect() {
 		int catCount = 0;
-		int selection;
+		int selection = 0;
 		Scanner input = new Scanner(System.in);
 		
 		for (int i=0; i< Environments.CATEG().size(); i++) {
 			System.out.println(i+"::"+Environments.CATEG().get(i));
 		}
 		System.out.print("Category number: ");
-		selection = input.nextInt();
+		String sel = input.nextLine();
+
+		if (isNumber(sel)){
+			selection = Integer.parseInt(sel);
+		}
+
 		
 		return selection;
+	}
+
+	private boolean isNumber(String n) {
+		try {
+			int number = Integer.parseInt(n);
+			if (number > Environments.CATEG().size()) {
+				return false;
+			}
+			return  true;
+		} catch (NumberFormatException ne) {
+			return false;
+		}
 	}
 }

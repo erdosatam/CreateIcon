@@ -1,5 +1,8 @@
 package hu.erdos.linux.createicons;
 
+import java.io.File;
+import java.io.IOException;
+
 /**
  * Create Icons
  *
@@ -36,7 +39,7 @@ public class App
 				}
         	}
         	if ((executive != null) && (icon != null) ) {
-        		new CreateIcon(executive, icon);
+				new CreateIcon(executive, icon);
         	} else {
         		Help();
         	}
