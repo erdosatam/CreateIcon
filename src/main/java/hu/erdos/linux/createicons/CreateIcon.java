@@ -11,8 +11,10 @@ public class CreateIcon {
 
 	DesktopIcon desktopIcon = new DesktopIcon();
 	Scanner scn = new Scanner(System.in);
+	private boolean astart = false;
 	
-	public CreateIcon(String exec, String icon) {
+	public CreateIcon(String exec, String icon, boolean autostart) {
+		this.astart = autostart;
 		System.out.println("Executive: "+exec);
 		System.out.println("Icon: "+icon);
 		String stdin = new String();
@@ -63,6 +65,7 @@ public class CreateIcon {
 	}
 
 	private void writeDesktop() throws IOException {
+		
 		String fileName = Environments.ICONSHOME+File.separator+desktopIcon.getName().replaceAll(" ", "")+".desktop";
 		File ihome = new File( Environments.ICONSHOME);
 		if (!ihome.exists()) {
@@ -83,6 +86,29 @@ public class CreateIcon {
 		}
 		pw.append("\n");
 		pw.close();
+		
+		fileName = Environments.AUTOSTARTFOLDER+File.separator+desktopIcon.getName().replaceAll(" ", "")+".desktop";
+		File astrt = new File(Environments.AUTOSTARTFOLDER);
+		if (!astrt.exists()) {
+			astrt.mkdirs();
+		}
+		
+		PrintWriter pwa = new PrintWriter(new FileWriter(new File(fileName),true),true);
+		pwa.append("[Desktop Entry]"+"\n");
+		pwa.append("Name="+desktopIcon.getName()+"\n");
+		pwa.append("Comment="+desktopIcon.getComment()+"\n");
+		pwa.append("TryExec="+desktopIcon.getExec()+"\n");
+		pwa.append("Exec="+desktopIcon.getExec()+"\n");
+		pwa.append("Icon="+desktopIcon.getIcon()+"\n");
+		pwa.append("Terminal="+desktopIcon.getTerminal()+"\n");
+		pwa.append("Type="+desktopIcon.getType()+"\n");
+		pwa.append("Categories=");
+		for (String category: desktopIcon.getCategories()) {			
+			pwa.append(category);
+		}
+		pwa.append("\n");
+		pwa.close();
+	
 		
 	}
 	

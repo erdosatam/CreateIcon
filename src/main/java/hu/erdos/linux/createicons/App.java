@@ -13,6 +13,7 @@ public class App
 	
     public static void main( String[] args )
     {
+    	boolean autostart = false;
     	String executive = null;
     	String icon = null;
     	Environments.root = isAdmin();
@@ -27,6 +28,9 @@ public class App
 					System.out.println(Environments.VERNUM);
 					System.exit(0);
 					break;
+				case "-a":
+					autostart = true;
+					break;
 				case "-h":
 					Help();
 					System.exit(0);
@@ -39,7 +43,7 @@ public class App
 				}
         	}
         	if ((executive != null) && (icon != null) ) {
-				new CreateIcon(executive, icon);
+				new CreateIcon(executive, icon, autostart);
         	} else {
         		Help();
         	}
@@ -56,6 +60,7 @@ public class App
 		hlp.append("options:\n");
 		hlp.append("\t-e <executive (with absolute path)>\n");
 		hlp.append("\t-i <icon (with absolute path)>\n");
+		hlp.append("\t-a Set this application for autostart at login.");
 		
 		System.out.println(hlp.toString());
 	}
