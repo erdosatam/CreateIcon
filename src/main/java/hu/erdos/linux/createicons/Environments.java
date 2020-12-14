@@ -9,7 +9,7 @@ public class Environments {
 	public static String ICONSHOME = USERHOME+File.separator+".local"+File.separator+"share"+File.separator+"applications";
 	public static String AUTOSTARTFOLDER = USERHOME+File.separator+".config"+File.separator+"autostart";
 	
-	public final static String VERNUM = "CreateIcon v0.1.8 \n(c) 2020, erdos\n";
+	public final static String VERNUM = "CreateIcon v0.1.8.1 \n(c) 2020, erdos\n";
 	public static boolean root = false;
 
 	public static ArrayList<String> CATEG() {

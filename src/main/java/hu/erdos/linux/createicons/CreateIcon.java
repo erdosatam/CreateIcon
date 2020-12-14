@@ -87,27 +87,30 @@ public class CreateIcon {
 		pw.append("\n");
 		pw.close();
 		
-		fileName = Environments.AUTOSTARTFOLDER+File.separator+desktopIcon.getName().replaceAll(" ", "")+".desktop";
-		File astrt = new File(Environments.AUTOSTARTFOLDER);
-		if (!astrt.exists()) {
-			astrt.mkdirs();
-		}
+		if (this.astart) {
 		
-		PrintWriter pwa = new PrintWriter(new FileWriter(new File(fileName),true),true);
-		pwa.append("[Desktop Entry]"+"\n");
-		pwa.append("Name="+desktopIcon.getName()+"\n");
-		pwa.append("Comment="+desktopIcon.getComment()+"\n");
-		pwa.append("TryExec="+desktopIcon.getExec()+"\n");
-		pwa.append("Exec="+desktopIcon.getExec()+"\n");
-		pwa.append("Icon="+desktopIcon.getIcon()+"\n");
-		pwa.append("Terminal="+desktopIcon.getTerminal()+"\n");
-		pwa.append("Type="+desktopIcon.getType()+"\n");
-		pwa.append("Categories=");
-		for (String category: desktopIcon.getCategories()) {			
-			pwa.append(category);
+			fileName = Environments.AUTOSTARTFOLDER+File.separator+desktopIcon.getName().replaceAll(" ", "")+".desktop";
+			File astrt = new File(Environments.AUTOSTARTFOLDER);
+			if (!astrt.exists()) {
+				astrt.mkdirs();
+			}
+			
+			PrintWriter pwa = new PrintWriter(new FileWriter(new File(fileName),true),true);
+			pwa.append("[Desktop Entry]"+"\n");
+			pwa.append("Name="+desktopIcon.getName()+"\n");
+			pwa.append("Comment="+desktopIcon.getComment()+"\n");
+			pwa.append("TryExec="+desktopIcon.getExec()+"\n");
+			pwa.append("Exec="+desktopIcon.getExec()+"\n");
+			pwa.append("Icon="+desktopIcon.getIcon()+"\n");
+			pwa.append("Terminal="+desktopIcon.getTerminal()+"\n");
+			pwa.append("Type="+desktopIcon.getType()+"\n");
+			pwa.append("Categories=");
+			for (String category: desktopIcon.getCategories()) {			
+				pwa.append(category);
+			}
+			pwa.append("\n");
+			pwa.close();
 		}
-		pwa.append("\n");
-		pwa.close();
 	
 		
 	}
