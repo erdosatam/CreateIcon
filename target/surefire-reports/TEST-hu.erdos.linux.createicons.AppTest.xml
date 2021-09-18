@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="hu.erdos.linux.createicons.AppTest" time="0.005" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="hu.erdos.linux.createicons.AppTest" time="0.006" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="java.vm.version" value="11.0.9.1+1-post-Debian-1deb10u2"/>
+    <property name="java.vm.version" value="11.0.12+7-post-Debian-2"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
     <property name="maven.multiModuleProjectDirectory" value="/home/erdosa/workspace/Projects/Linux/CreateIcon"/>
     <property name="java.vm.vendor" value="Debian"/>
@@ -16,7 +16,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/data/erdosa/workspace/Projects/Linux/CreateIcon"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
-    <property name="java.runtime.version" value="11.0.9.1+1-post-Debian-1deb10u2"/>
+    <property name="java.runtime.version" value="11.0.12+7-post-Debian-2"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="/tmp"/>
@@ -32,7 +32,7 @@
     <property name="java.class.version" value="55.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="4.19.0-13-amd64"/>
+    <property name="os.version" value="5.10.0-8-rt-amd64"/>
     <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
     <property name="user.home" value="/home/erdosa"/>
     <property name="user.timezone" value="Europe/Budapest"/>
@@ -43,22 +43,21 @@
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean package"/>
     <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.version" value="11.0.9.1"/>
-    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="java.version" value="11.0.12"/>
     <property name="java.vendor" value="Debian"/>
     <property name="maven.home" value="/usr/share/maven"/>
     <property name="file.separator" value="/"/>
-    <property name="java.version.date" value="2020-11-04"/>
+    <property name="java.version.date" value="2021-07-20"/>
     <property name="java.vendor.url.bug" value="https://bugs.debian.org/openjdk-11"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="hu.erdos.linux.createicons.AppTest" name="shouldAnswerWithTrue" time="0.005"/>
+  <testcase classname="hu.erdos.linux.createicons.AppTest" name="shouldAnswerWithTrue" time="0.006"/>
 </testsuite>

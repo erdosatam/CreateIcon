@@ -6,15 +6,17 @@ import java.util.ArrayList;
 public class Environments {
 
 	public static String USERHOME = System.getProperty("user.home");
-	public static String ICONSHOME = USERHOME+File.separator+".local"+File.separator+"share"+File.separator+"applications";
-	public static String AUTOSTARTFOLDER = USERHOME+File.separator+".config"+File.separator+"autostart";
-	
-	public final static String VERNUM = "CreateIcon v0.1.8.1 \n(c) 2020, erdos\n";
+	public static String ICONSHOME = Environments.USERHOME + File.separator + ".local" + File.separator + "share"
+			+ File.separator + "applications";
+	public static String AUTOSTARTFOLDER = Environments.USERHOME + File.separator + ".config" + File.separator
+			+ "autostart";
+
+	public final static String VERNUM = "CreateIcon v0.1.9.0 \n(c) 2020, erdos\n";
 	public static boolean root = false;
 
 	public static ArrayList<String> CATEG() {
-		ArrayList<String> cat = new ArrayList<String>();
-		
+		final ArrayList<String> cat = new ArrayList<String>();
+
 		cat.add("AudioVideo");
 		cat.add("Audio");
 		cat.add("Video");
@@ -26,9 +28,8 @@ public class Environments {
 		cat.add("Office");
 		cat.add("Settings");
 		cat.add("Utility");
-		
+
 		return cat;
 	}
-	
-	
+
 }
