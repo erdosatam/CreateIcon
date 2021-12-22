@@ -1,5 +1,5 @@
 # CreateIcon
-`(c)2020 erdos 0.1.9.0`
+`(c)2020 erdos 0.1.10`
 >command line tool for creating desktop icons
 
 ## Usage
