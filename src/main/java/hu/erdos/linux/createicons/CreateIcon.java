@@ -48,6 +48,13 @@ public class CreateIcon {
 		} else {
 			this.desktopIcon.setType(typ);
 		}
+		System.out.print("Comment: ");
+		final String comment = this.scn.nextLine();
+		if (comment.isEmpty()) {
+			this.desktopIcon.setComment(this.desktopIcon.getName());
+		} else {
+			this.desktopIcon.setComment(comment);
+		}
 		this.desktopIcon.setStartupWMClass(this.desktopIcon.getName().replaceAll(" ", ""));
 		System.out.println("Add categories: ");
 		System.out.println("Select category: ");
