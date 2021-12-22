@@ -11,7 +11,7 @@ public class Environments {
 	public static String AUTOSTARTFOLDER = Environments.USERHOME + File.separator + ".config" + File.separator
 			+ "autostart";
 
-	public final static String VERNUM = "CreateIcon v0.1.9.0 \n(c) 2020, erdos\n";
+	public final static String VERNUM = "CreateIcon v0.1.10 \n(c) 2020, erdos\n";
 	public static boolean root = false;
 
 	public static ArrayList<String> CATEG() {
